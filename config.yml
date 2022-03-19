@@ -1,0 +1,19 @@
+baseURL: https://relm4.org/blog/
+languageCode: en-us
+title: Relm4 blog
+description: Exploring new realms
+author: "Aaron Erhardt"
+
+theme: "PaperMod"
+
+params:
+    description: Exploring new realms
+    ShowReadingTime: true
+    ShowShareButtons: true
+    ShowCodeCopyButtons: true
+    defaultTheme: auto
+    disableThemeToggle: true
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/Relm4"
