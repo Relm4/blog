@@ -6,6 +6,11 @@ author: "Aaron Erhardt"
 
 theme: "PaperMod"
 
+outputs:
+    home:
+        - HTML
+        - RSS
+
 params:
     description: Exploring new realms
     ShowReadingTime: true
@@ -13,7 +18,10 @@ params:
     ShowCodeCopyButtons: true
     defaultTheme: auto
     disableThemeToggle: true
+    ShowFullTextinRSS: true
 
     socialIcons:
+        - name: "rss"
+          url: "https://relm4.org/blog/index.xml"
         - name: github
           url: "https://github.com/Relm4"
