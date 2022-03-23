@@ -1,6 +1,6 @@
 ---
 title: "Speedrunning GUI development in Rust"
-date: 2021-12-05T15:00:00+30:00
+date: 2021-12-05
 # weight: 1
 aliases: ["/gui_speedrun"]
 author: "Aaron Erhardt"
