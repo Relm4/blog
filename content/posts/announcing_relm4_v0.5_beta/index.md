@@ -41,14 +41,14 @@ Now - almost 300 commits later - I'm proud to present the results of our hard wo
 
 ## Fewer traits, more fun!
 
-So far, Relm4 had many different traits for different use-cases.
-In total, 7 traits have been unified into one interface, the `Component` trait.
-Furthermore, the new trait doesn't only cover all previous use-cases, it even adds some features on top.
+So far, Relm4 had several traits for different use-cases.
+In total, 7 traits were unified into one interface, the `Component` trait.
+Furthermore, the new trait covers not only all previous use-cases, it even adds some features on top.
 
 ### Maximum flexibility
 
 In version 0.4, Relm4's macros had become more attractive for gtk4-rs based applications.
-I'm happy this trend continues in 0.5.
+I'm happy this trend continues in version 0.5.
 You can now mix Relm4 into any gtk-rs application and the other way around with hardly any limitations.
 
 ### Commands
@@ -93,11 +93,11 @@ let component = MyComponent::builder()
 ## Macroscopic macro improvements
 
 The `view!` macro has been largely rewritten, making the codebase smaller, faster and more maintainable.
-Additionally, the macro gained a lot of exiting features and is able to continue the code generation even if it encounters errors.
+Additionally, the macro gained a lot of exiting features and can continue the code generation even if it encounters errors.
 
 ### Rusty blueprints
 
-With 0.5, the macro syntax has been cleaned up and became even easier.
+With 0.5, the macro syntax was cleaned up and became even easier.
 By pure coincidence, it looks very similar to the [Blueprint language](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/) that's specifically designed for GTK4 UIs.
 
 Yet, Relm4 has more to offer than just creating UIs.
@@ -159,10 +159,10 @@ Further features added in this release include:
 ## Fabulous factories
 
 Along with components, factories saw a big update.
-The new `FactoryComponent` trait is very similar to `Component` and allows every entry of a factory to manage it's own state.
+The new `FactoryComponent` trait is very similar to `Component` and allows every entry of a factory to manage its own state.
 
-The updated `FactoryVecDeque` type comes extremely close to the goal to make collections of UI elements just as accessible as regular data collections.
-With implementations for `Index` and `IndexMut` as well as most methods from `VecDeque` you'll hardly notice you're actually working with UI elements.
+The updated `FactoryVecDeque` type comes extremely close to the goal of making collections of UI elements just as accessible as regular data collections.
+With implementations for `Index` and `IndexMut` as well as most methods from `VecDeque`, you'll hardly notice you're actually working with UI elements.
 Even external updates, e.g. when a user swaps two tabs, are now automatically transferred to the order of elements in the `FactoryVecDeque`.
 A new RAII-guard completes the list of improvements and makes it impossible to forget to render the changes after modifying the data.
 
@@ -196,7 +196,7 @@ Also, the book isn't fully ported to v0.5, but the examples in the repository ar
 
 ## Remaining tasks
 
-We hope that this release can be considered stable soon.
+We're looking forward to release 0.5 as stable soon.
 However, there are still a few things left to do.
 **Feedback and contributions are highly appreciated!**
 
@@ -216,12 +216,13 @@ However, there are still a few things left to do.
 
 # Special thanks
 
-I highly appreciate feedback and contributions to Relm4 and thank those who helped me with this release:
+We highly appreciate feedback and contributions to Relm4.
+In the name of all members of the Relm4 organization I thank those who helped with this release:
 
 + [Michael Murphy](https://github.com/mmstick) for coming up with several brilliant ideas and contributing most of the component rework.
 + [Maksym Shcherbak](https://github.com/cofee-on-the-desk) for his ongoing and outstanding contributions around factories and other parts of Relm4.
 + [Andy Russell](https://github.com/euclio) for contributing improvements all across Relm4.
 + [Eduardo Flores](https://github.com/edfloreshz) for joining the discussions and porting the book to 0.5.
-+ Everyone else who contributed, gave feedback in the Matrix room or on GitHub.
++ Everyone else who contributed or gave feedback.
 + The whole gtk-rs team for providing awesome Rust bindings for GTK and always being helpful.
 
