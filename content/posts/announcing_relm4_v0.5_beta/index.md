@@ -156,53 +156,61 @@ Further features added in this release include:
 + Support adding widgets from local variables
 + Automatically block signals while updating values
 
-## Factory improvements
+## Fabulous factories
 
 Along with components, factories saw a big update.
 The new `FactoryComponent` trait is very similar to `Component` and allows every entry of a factory to manage it's own state.
 
 The updated `FactoryVecDeque` type comes extremely close to the goal to make collections of UI elements just as accessible as regular data collections.
 With implementations for `Index` and `IndexMut` as well as most methods from `VecDeque` you'll hardly notice you're actually working with UI elements.
-
-For 
-
-A RAII-guard was added that renders changes automatically when dropped.
+Even external updates, e.g. when a user swaps two tabs, are now automatically transferred to the order of elements in the `FactoryVecDeque`.
+A new RAII-guard completes the list of improvements and makes it impossible to forget to render the changes after modifying the data.
 
 ```rust
 let mut guard = factory.guard();
-guard.swap(1, 2);
 guard.push_back(1);
+guard.swap(1, 2);
+let last_value = guard.pop_back().unwrap();
 println!("Value of the first element {}", guard[0]);
+// Changes are rendered as soon as the scope ends
 ```
 
-![Tab game video](./tab_game.webm)
+Let's see the new factories in action!
+The new [`tab_game`](https://github.com/Relm4/Relm4/blob/next/examples/libadwaita/tab_game.rs) example takes advantage of the new features to build a small game.
 
-Also, a much more efficient and maintainable algorithm was added to calculate efficient updates.
+<video controls>
+    <source src="./tab_game.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video> 
 
 ## Try it out!
+
+Try out the new beta by adding the following lines to your project's Cargo.toml file:
 
 ```toml
 relm4 = { git = "https://github.com/Relm4/Relm4", tag = "0.5.0-beta1" }
 ```
 
+Yet, keep in mind that this is still a beta, so some things might be slightly adjusted before the stable release.
+Also, the book isn't fully ported to v0.5, but the examples in the repository are always up to date.
+
 ## Remaining tasks
 
 We hope that this release can be considered stable soon.
 However, there are still a few things left to do.
-Feedback and contributions are highly appreciated!
+**Feedback and contributions are highly appreciated!**
 
 + Polish some rough edges in the API
 + Finish updating the book
 + Port more examples to 0.5
 + Port the rest of relm4-components to 0.5
 
-> Note: As of writing this, the book isn't fully ported to v0.5, but the examples in the repository are always up to date.
-
 # Where to get started
 
-+ ⬆️  **[Migration guide](https://relm4.org/book/next/0_4_to_0_5.html)**
++ ⬆️ **[Migration guide](https://relm4.org/book/next/0_4_to_0_5.html)**
++ 🏠 **[Website](https://relm4.org)**
 + ⭐ **[Repository](https://github.com/Relm4/Relm4)**
-+ 📖 **[Book](https://relm4.org/book/stable)**
++ 📖 **[Book](https://relm4.org/book/next)**
 + 📜 **[Rust documentation](https://relm4.org/docs/relm4/relm4/)**
 
 
@@ -216,3 +224,4 @@ I highly appreciate feedback and contributions to Relm4 and thank those who help
 + [Eduardo Flores](https://github.com/edfloreshz) for joining the discussions and porting the book to 0.5.
 + Everyone else who contributed, gave feedback in the Matrix room or on GitHub.
 + The whole gtk-rs team for providing awesome Rust bindings for GTK and always being helpful.
+
