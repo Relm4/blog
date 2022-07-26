@@ -43,26 +43,27 @@ Now - almost 300 commits later - I'm proud to present the results of our hard wo
 
 So far, Relm4 had many different traits for different use-cases.
 In total, 7 traits have been unified into one interface, the `Component` trait.
-It doesn't only cover all different use-cases, it even adds some features on top.
+Furthermore, the new trait doesn't only cover all previous use-cases, it even adds some features on top.
 
 ### Maximum flexibility
 
-In the last release announcement I mentioned that Relm4 had become more flexible when interacting with regular gtk-rs based code.
+In version 0.4, Relm4's macros had become more attractive for gtk4-rs based applications.
 I'm happy this trend continues in 0.5.
 You can now mix Relm4 into any gtk-rs application and the other way around with hardly any limitations.
 
 ### Commands
 
-Commands are a concept in [Elm](https://elm-lang.org) that is often used to run web-requests in the background.
-Now the same works in Relm4 too.
-You can take full advantage of Rust's async ecosystem to run asynchronous tasks in the background without blocking your application.
+Commands are a concept in [Elm](https://elm-lang.org) that is often used to run web-requests in the background without blocking other UI updates.
+With Relm4, you now can take full advantage of Rust's async ecosystem to run asynchronous tasks in the background without blocking your application.
 
 ```rust
-// Send a new command with a delay of 1s
+// Add a new command future to be executed in the backgroud
 sender.command(|out, shutdown| {
-    // Cancel the future if the component is dropped in the meantime
+    // Cancel the future if the component is shut down in the meantime
     shutdown.register(async move {
+        // Wait for one second
         tokio::time::sleep(Duration::from_secs(1)).await;
+        // Emit a delayed increment event
         out.send(AppMsg::Increment);
     }).drop_on_shutdown()
 })
@@ -71,7 +72,7 @@ sender.command(|out, shutdown| {
 ### Seamless communication
 
 Many applications written in Relm4 rely upon communication between components.
-Often one message needs to be forwarded to another component, for example to inform the main window that a dialog was closed.
+Often one message needs to be forwarded to another component, e.g. to show a dialog.
 Previously, this required forwarding the message from the application logic.
 Now you can simply register a closure to modify and forward messages.
 
@@ -92,15 +93,15 @@ let component = MyComponent::builder()
 ## Macroscopic macro improvements
 
 The `view!` macro has been largely rewritten, making the codebase smaller, faster and more maintainable.
-Additionally, the macro gained a lot of exiting features and is now able to recover from most invalid expressions so that the as much valid code as possible is generated.
+Additionally, the macro gained a lot of exiting features and is able to continue the code generation even if it encounters errors.
 
 ### Rusty blueprints
 
-With 0.5, the macro syntax has been cleaned up and become even easier.
-By pure coincidence, it looks very similar to the [Blueprint language](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/) that's designed for GTK4 UIs specifically.
+With 0.5, the macro syntax has been cleaned up and became even easier.
+By pure coincidence, it looks very similar to the [Blueprint language](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/) that's specifically designed for GTK4 UIs.
 
 Yet, Relm4 has more to offer than just creating UIs.
-It integrates well with the surrounding Rust code and allows you to update values automatically, use local variables and connect message handlers directly with the UI declaration.
+It integrates well into the surrounding Rust code, allows you to update values automatically and to use local variables and connect message handlers directly with the UI declaration.
 You can even use `match` and `if` conditions to show widgets depending upon certain conditions.
 
 
@@ -126,12 +127,12 @@ gtk::Box {
         .selectable(true)
         .build(),
 
-    // Use different widgets depending on match statement
+    // Use different widgets depending on a pattern
     // and show a transition in between
     #[transition(SlideLeft)]
     match counter.value {
         (0..=2) => {
-            // First match arm: show button
+            // First match arm: show a button
             gtk::Button {
                 set_label: "Value is smaller than 3, click to increment it!",
                 connect_clicked[sender] => move |_| {
@@ -140,7 +141,7 @@ gtk::Box {
             }
         },
         _ => {
-            // Second match arm: show label
+            // Second match arm: show a label
             gtk::Label {
                 set_label: "Value is higher than 2",
             }
@@ -158,8 +159,24 @@ Further features added in this release include:
 ## Factory improvements
 
 Along with components, factories saw a big update.
-The new `FactoryComponent` trait is very similar to `Component` and allows every entry of a factory to manage it's own state
-At the same time, each element is still as easy to access as an element of an vector.
+The new `FactoryComponent` trait is very similar to `Component` and allows every entry of a factory to manage it's own state.
+
+The updated `FactoryVecDeque` type comes extremely close to the goal to make collections of UI elements just as accessible as regular data collections.
+With implementations for `Index` and `IndexMut` as well as most methods from `VecDeque` you'll hardly notice you're actually working with UI elements.
+
+For 
+
+A RAII-guard was added that renders changes automatically when dropped.
+
+```rust
+let mut guard = factory.guard();
+guard.swap(1, 2);
+guard.push_back(1);
+println!("Value of the first element {}", guard[0]);
+```
+
+![Tab game video](./tab_game.webm)
+
 Also, a much more efficient and maintainable algorithm was added to calculate efficient updates.
 
 ## Try it out!
