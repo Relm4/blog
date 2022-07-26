@@ -10,6 +10,10 @@ outputs:
     home:
         - HTML
         - RSS
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
 
 params:
     description: Exploring new realms
