@@ -47,13 +47,13 @@ Furthermore, the new trait covers not only all previous use-cases, it even adds 
 
 ### Maximum flexibility
 
-In version 0.4, Relm4's macros had become more attractive for gtk4-rs based applications.
+In version 0.4, Relm4's macros made Relm4 more attractive for gtk4-rs based applications.
 I'm happy this trend continues in version 0.5.
 You can now mix Relm4 into any gtk-rs application and the other way around with hardly any limitations.
 
 ### Commands
 
-Commands are a concept in [Elm](https://elm-lang.org) that is often used to run web-requests in the background without blocking other UI updates.
+Commands are a concept from the [Elm](https://elm-lang.org) programming language that is often used to run web-requests in the background without blocking other UI updates.
 With Relm4, you now can take full advantage of Rust's async ecosystem to run asynchronous tasks in the background without blocking your application.
 
 ```rust
@@ -101,7 +101,7 @@ With 0.5, the macro syntax was cleaned up and became even easier.
 By pure coincidence, it looks very similar to the [Blueprint language](https://jwestman.pages.gitlab.gnome.org/blueprint-compiler/) that's specifically designed for GTK4 UIs.
 
 Yet, Relm4 has more to offer than just creating UIs.
-It integrates well into the surrounding Rust code, allows you to update values automatically and to use local variables and connect message handlers directly with the UI declaration.
+It integrates well into the surrounding Rust code by allowing you to update values automatically, to use local variables and to connect message handlers directly with the UI declaration.
 You can even use `match` and `if` conditions to show widgets depending upon certain conditions.
 
 
@@ -153,7 +153,7 @@ gtk::Box {
 Further features added in this release include:
 
 + Support for multiple top-level widgets
-+ Support adding widgets from local variables
++ Support for adding widgets from local variables
 + Automatically block signals while updating values
 
 ## Fabulous factories
@@ -163,7 +163,7 @@ The new `FactoryComponent` trait is very similar to `Component` and allows every
 
 The updated `FactoryVecDeque` type comes extremely close to the goal of making collections of UI elements just as accessible as regular data collections.
 With implementations for `Index` and `IndexMut` as well as most methods from `VecDeque`, you'll hardly notice you're actually working with UI elements.
-Even external updates, e.g. when a user swaps two tabs, are now automatically transferred to the order of elements in the `FactoryVecDeque`.
+Even external updates, e.g. when a user swaps two tabs, are now automatically synchronized with the order of elements in the `FactoryVecDeque`.
 A new RAII-guard completes the list of improvements and makes it impossible to forget to render the changes after modifying the data.
 
 ```rust
@@ -183,12 +183,12 @@ The new [`tab_game`](https://github.com/Relm4/Relm4/blob/next/examples/libadwait
     Your browser does not support the video tag.
 </video> 
 
-## Try it out!
+# Try it out!
 
 Try out the new beta by adding the following lines to your project's Cargo.toml file:
 
 ```toml
-relm4 = { git = "https://github.com/Relm4/Relm4", tag = "0.5.0-beta1" }
+relm4 = { git = "https://github.com/Relm4/Relm4", tag = "v0.5.0-beta.1" }
 ```
 
 Yet, keep in mind that this is still a beta, so some things might be slightly adjusted before the stable release.
@@ -205,14 +205,13 @@ However, there are still a few things left to do.
 + Port more examples to 0.5
 + Port the rest of relm4-components to 0.5
 
-# Where to get started
+## Where to get started
 
 + ⬆️ **[Migration guide](https://relm4.org/book/next/0_4_to_0_5.html)**
 + 🏠 **[Website](https://relm4.org)**
 + ⭐ **[Repository](https://github.com/Relm4/Relm4)**
 + 📖 **[Book](https://relm4.org/book/next)**
-+ 📜 **[Rust documentation](https://relm4.org/docs/relm4/relm4/)**
-
++ 📜 **[Rust documentation](https://relm4.org/docs/next/relm4)**
 
 # Special thanks
 
