@@ -1,6 +1,6 @@
 ---
 title: "Off to new adventures - Announcing Relm4 v0.5 beta!"
-date: 2022-07-25
+date: 2022-07-26
 # weight: 1
 tags: ["relm4"]
 author: "Aaron Erhardt"
@@ -16,13 +16,13 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 editPost:
-    URL: "https://github.com/AaronErhardt/AaronErhardt.github.io/blob/master/blog-src/content"
+    URL: "https://github.com/Relm4/blog/blob/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
 
 A new realm appears on the horizon, waiting for you with plenty of new features to discover!
-I'm exited to announce Relm4 v0.5, by far our biggest release so far!
+I'm exited to announce Relm4 v0.5, by far our biggest release so far.
 
 > ## About Relm4
 > 
@@ -34,15 +34,16 @@ I'm exited to announce Relm4 v0.5, by far our biggest release so far!
 
 # What's new?
 
-Relm4 v0.5 features some fundamental redesigns that simplify the API, solve longstanding issues and enable several new features.
-The work was started more than half a year ago by [Michael Murphy](https://github.com/mmstick) from [System76](https://system76.com) who had some new ideas to improve the structure of Relm4 applications.
-Over time, more contributors gathered together and almost every single part of Relm4 saw some adjustments while some parts were refactored several times.
+Relm4 v0.5 features some fundamental changes that greatly simplify the API and solve some longstanding issues.
+More than half a year ago, [Michael Murphy](https://github.com/mmstick) from [System76](https://system76.com) started off the development of 0.5 with some great ideas to improve the structure of Relm4 applications.
+Over time, more developers joined the effort to redesign and refine Relm4's API.
+Now - almost 300 commits later - I'm proud to present the results of our hard work.
 
 ## Fewer traits, more fun!
 
 So far, Relm4 had many different traits for different use-cases.
-In total 7 traits have now been unified in one simple interface, the `Component` trait.
-Not only does this trait cover all different use-cases, it even adds some features on top.
+In total, 7 traits have been unified into one interface, the `Component` trait.
+It doesn't only cover all different use-cases, it even adds some features on top.
 
 ### Maximum flexibility
 
