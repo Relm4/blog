@@ -219,7 +219,7 @@ We highly appreciate feedback and contributions to Relm4.
 In the name of all members of the Relm4 organization I thank those who helped with this release:
 
 + [Michael Murphy](https://github.com/mmstick) for coming up with several brilliant ideas and contributing most of the component rework.
-+ [Maksym Shcherbak](https://github.com/cofee-on-the-desk) for his ongoing and outstanding contributions around factories and other parts of Relm4.
++ [Maksym Shcherbak](https://github.com/MaksymShcherbak) for his ongoing and outstanding contributions around factories and other parts of Relm4.
 + [Andy Russell](https://github.com/euclio) for contributing improvements all across Relm4.
 + [Eduardo Flores](https://github.com/edfloreshz) for joining the discussions and porting the book to 0.5.
 + Everyone else who contributed or gave feedback.
