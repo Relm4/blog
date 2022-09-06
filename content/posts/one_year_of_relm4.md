@@ -1,6 +1,6 @@
 ---
 title: "One year of Relm4"
-date: 2022-09-05
+date: 2022-09-06
 # weight: 1
 tags: ["relm4"]
 author: "Aaron Erhardt"
