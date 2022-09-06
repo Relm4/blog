@@ -57,7 +57,7 @@ Commands are a concept from the [Elm](https://elm-lang.org) programming language
 With Relm4, you now can take full advantage of Rust's async ecosystem to run asynchronous tasks in the background without blocking your application.
 
 ```rust
-// Add a new command future to be executed in the backgroud
+// Add a new command future to be executed in the background
 sender.command(|out, shutdown| {
     // Cancel the future if the component is shut down in the meantime
     shutdown.register(async move {
