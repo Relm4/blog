@@ -44,7 +44,7 @@ I'm not going into depth about the changes and the new API in this post but ther
 
 + **[Repository](https://github.com/AaronErhardt/relm4)**
 + 📖 **[Book](https://aaronerhardt.github.io/relm4-book/book/)**
-+ **[Rust documenation](https://aaronerhardt.github.io/docs/relm4/relm4/)**
++ **[Rust documentation](https://aaronerhardt.github.io/docs/relm4/relm4/)**
 
 ## Conclusion
 
