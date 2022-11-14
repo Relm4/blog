@@ -1,0 +1,25 @@
+/* jetbrains-mono-regular */
+@font-face {
+	font-family: 'JetBrains Mono Server';
+	font-style: normal;
+	font-weight: 400;
+	src: local("JetBrains Mono Regular"), local("JetBrainsMono-Regular"), url(fonts/jetbrains-mono-regular.woff2) format("woff2");
+}
+/* jetbrains-mono-semibold */
+@font-face {
+	font-family: 'JetBrains Mono Server';
+	font-style: normal;
+	font-weight: 400;
+	src: local("JetBrains Mono SemiBold"), local("JetBrainsMono-SemiBold"), url(fonts/jetbrains-mono-semibold.woff2) format("woff2");
+}
+/* jetbrains-mono-bold */
+@font-face {
+	font-family: 'JetBrains Mono Server';
+	font-style: normal;
+	font-weight: 700;
+	src: local("JetBrains Mono Bold"), local("JetBrainsMono-Bold"), url(fonts/jetbrains-mono-bold.woff2) format("woff2");
+}
+
+pre * {
+	font-family: 'JetBrains Mono Server';
+}
