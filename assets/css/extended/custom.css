@@ -1,0 +1,57 @@
+:root {
+  --blend: 0.3;
+  --dark-red: 106;
+  --dark-blue: 105;
+  --dark-green: 85;
+  --light: 255;
+  --percent: 80%;
+  --blue-bg: #73A0D0;
+
+  --first-bg: #0D1117;
+  --second-bg: #FFFFFF;
+  --third-bg: #1D1E2C;
+
+  --accent-bg-1: #2A7F62;
+  --accent-bg-2: #9B1D20;
+  --accent-bg-3: #2C497F;
+  --accent-bg-4: #E08E45;
+}
+
+* {
+  font-family: 'Fira Sans';
+}
+
+#top {
+  animation: move-bg 60s linear infinite;
+  animation-delay: -39s;
+  transition: background 2s linear;
+}
+
+article.post-entry, code, footer a, footer nav, footer div, #top-link {
+  background: #FFF2 !important;
+  border-color: transparent !important;
+}
+
+.post-content div.highlight:not(table) {
+  background: #FFF1 !important;
+}
+
+div, div.highlight *:not(.copy-code), div.post-content pre code, .paginav > a, div.share-buttons > a {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.post-content a > code {
+  box-shadow: none;
+}
+
+div.logo > a::before {
+  content: ' ';
+  background-image: url('/blog/safari-pinned-tab.svg');
+  background-size: contain;
+  width: 1.6em;
+  height: 1.6em;
+  display: inline-block;
+  margin-bottom: -0.42em;
+  margin-right: 0.3em;
+}
