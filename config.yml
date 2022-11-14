@@ -1,6 +1,6 @@
 baseURL: https://relm4.org/blog/
 languageCode: en-us
-title: Relm4 blog
+title: "Relm4 blog"
 description: Exploring new realms
 author: "Aaron Erhardt"
 
@@ -14,6 +14,13 @@ markup:
     goldmark:
         renderer:
             unsafe: true
+    highlight:
+        # anchorLineNos: true
+        codeFences: true
+        guessSyntax: true
+        lineNos: true
+        # noClasses: false
+        style: monokai
 
 params:
     description: Exploring new realms
@@ -23,6 +30,9 @@ params:
     defaultTheme: auto
     disableThemeToggle: true
     ShowFullTextinRSS: true
+
+    assets:
+        disableHLJS: true
 
     socialIcons:
         - name: "rss"
