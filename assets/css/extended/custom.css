@@ -33,7 +33,7 @@ article.post-entry, code, footer a, footer nav, footer div, #top-link {
 }
 
 .post-content div.highlight:not(table) {
-  background: #FFF1 !important;
+  background: #FFFFFF19 !important;
 }
 
 div, div.highlight *:not(.copy-code), div.post-content pre code, .paginav > a, div.share-buttons > a {
