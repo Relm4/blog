@@ -17,10 +17,6 @@
   --accent-bg-4: #E08E45;
 }
 
-* {
-  font-family: 'Fira Sans';
-}
-
 #top {
   animation: move-bg 60s linear infinite;
   animation-delay: -39s;
