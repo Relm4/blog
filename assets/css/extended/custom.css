@@ -24,12 +24,12 @@
 }
 
 article.post-entry, code, footer a, footer nav, footer div, #top-link {
-  background: #FFF2 !important;
+  background: #FFFFFF17 !important;
   border-color: transparent !important;
 }
 
 .post-content div.highlight:not(table) {
-  background: #FFFFFF19 !important;
+  background: #FFFFFF17 !important;
 }
 
 div, div.highlight *:not(.copy-code), div.post-content pre code, .paginav > a, div.share-buttons > a {
