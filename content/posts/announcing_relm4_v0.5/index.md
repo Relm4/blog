@@ -37,11 +37,13 @@ Check out the [full changelog](https://github.com/Relm4/Relm4/blob/main/CHANGES.
 
 ## Async everything
 
-In the first beta release, Relm4 added supported [commands](/blog/posts/announcing_relm4_v0.5_beta/#commands) as a concept from Elm that made asynchronous code easy to integrate.
-In this release, we have added asynchronous components and asynchronous factories, which make it possible to use async code almost everywhere in Relm4.
-Especially late initialization of components that have to wait on asynchronous tasks, e.g. to perform web request, has become very easy to implement.
+The first beta release of Relm4 v0.5 brought [commands](/blog/posts/announcing_relm4_v0.5_beta/#commands) as a concept from Elm, which made asynchronous code very easy to integrate.
+Since then, we've further extended async support, making it possible to use async from almost anywhere in Relm4.
+This fully unlocks the great potential of Rust's async ecosystem and makes common tasks like interacting with network APIs a breeze.
 
-Additionally, components can be now converted into an asynchronous [`Stream`](https://docs.rs/futures/latest/futures/stream/trait.Stream.html) of messages.
+In particular, asynchronous initialization of components greatly simplifies state management.
+Instead of immediately returning a model in an uninitialized state, you can fetch all the resources you need and eventually return a fully initialized model.
+On top of that, Relm4 allows you to show placeholder widgets while the model is being initialized.
 
 ```rust
 // Placeholder until `init_model` completes
@@ -66,13 +68,13 @@ fn init_loading_widgets(root: &mut Self::Root) -> Option<LoadingWidgets> {
 
 // ...
 
-// Async intializaion
+// Async initialization
 async fn init_model(
     value: Self::Init,
     _index: &DynamicIndex,
     _sender: AsyncFactorySender<Self>,
 ) -> Self {
-    // Asynchronously fetch data, sync information...
+    // Asynchronously fetch data, sync information, etc.
     tokio::time::sleep(Duration::from_secs(1)).await;
     Self { value }
 }
@@ -85,8 +87,8 @@ async fn init_model(
 
 ## Widget templates
 
-Often, similar widgets and properties are used multiple times in the same application.
-With widget templates, you can define common UI elements as templates and reuse them across your code.
+Often, similar widgets and properties are used multiple times in the same application or even across different applications.
+With widget templates, you can define common UI elements as templates and reuse them easily.
 
 ```rust
 #[relm4::widget_template]
@@ -103,7 +105,7 @@ impl WidgetTemplate for MyBox {
 }
 ```
 
-Using the template only requires the`#[template]` attribute in the macro.
+Using the template just requires the `#[template]` attribute in the macro.
 
 ```rust
 #[relm4::component]
@@ -132,7 +134,7 @@ impl SimpleComponent for AppModel {
 }
 ```
 
-More details can be found in [this PR](https://github.com/Relm4/Relm4/pull/310).
+You can find more details in [this PR](https://github.com/Relm4/Relm4/pull/310).
 
 ## Macro improvements
 
@@ -146,9 +148,12 @@ gtk::Button {
 }
 ```
 
-## Less boilerplate
+## Tooling additions
 
-Recently, we published [Relm4 snippets](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets) as an IDE extension that provides helpful snippets for implementing Relm4's traits.
+Recently, we published [Relm4 snippets](https://open-vsx.org/extension/Relm4/relm4-snippets) as an IDE extension that provides helpful snippets for implementing Relm4's traits.
+This should help you saving some time for while implementing common traits so you can fully focus on coding.
+
+![Relm4 snippets](./snippets.gif)
 
 ## Other improvements
 
@@ -181,11 +186,11 @@ If you want to support the our team working on these projects, please consider s
 We highly appreciate feedback and contributions to Relm4.
 In the name of all members of the Relm4 organization I thank those who helped with this release:
 
-+ [Andy Russell](https://github.com/euclio) for his continuous effort to improve Relm4
-+ [Eduardo Flores](https://github.com/edfloreshz) for his longstanding contributions to Relm4 and his work on Relm4 snippets
-+ [Pentamassiv](https://github.com/pentamassiv) for working on Relm4 and gtk-rs to bring our docs to docs.rs
-+ [Maksym Shcherbak](https://github.com/MaksymShcherbak) for many improvements, especially to our examples
++ [Andy Russell](https://github.com/euclio) for his continuous effort to improve Relm4.
++ [Eduardo Flores](https://github.com/edfloreshz) for his longstanding contributions to Relm4 and his work on Relm4 snippets.
++ [Pentamassiv](https://github.com/pentamassiv) for working on Relm4 and gtk-rs to bring our docs to docs.rs.
++ [Maksym Shcherbak](https://github.com/MaksymShcherbak) for many improvements, especially to our examples.
 + [Tronta](https://github.com/tronta) for contributing many book improvements.
-+ [Sashin Exists](https://github.com/sashinexists) for implementing several useful methods for `FactoryVecDeque`
++ [Sashin Exists](https://github.com/sashinexists) for implementing several useful methods for `FactoryVecDeque`.
 + Everyone else who contributed or gave feedback.
 + The whole gtk-rs team for providing awesome Rust bindings for GTK.
