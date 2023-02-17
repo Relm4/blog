@@ -18,6 +18,7 @@
 }
 
 #top {
+  background: #000;
   animation: move-bg 60s linear infinite;
   animation-delay: -39s;
   transition: background 2s linear;
