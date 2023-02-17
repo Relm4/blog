@@ -181,6 +181,7 @@ If you want to support the our team working on these projects, please consider s
 + ⭐ **[Repository](https://github.com/Relm4/Relm4)**
 + 📖 **[Book](https://relm4.org/book/stable)**
 + 📜 **[Rust documentation](https://docs.rs/relm4)**
++ 📨 **[Chat room](https://matrix.to/#/#relm4:matrix.org)**
 
 # Special thanks
 
