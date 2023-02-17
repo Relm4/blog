@@ -18,8 +18,17 @@
 }
 
 #top {
-  background: #000;
-  animation: move-bg 60s linear infinite;
+  background:
+    radial-gradient(circle at 50% 0,
+      rgba(var(--dark-red), 0, 0, var(--blend)),
+      rgba(var(--dark-red), 0 ,0, 0) var(--percent)),
+    radial-gradient(circle at 6.7% 75%,
+      rgba(0, var(--dark-green), 0, var(--blend)),
+      rgba(0, var(--dark-green), 0, 0) var(--percent)),
+    radial-gradient(circle at 93.3% 75%,
+      rgba(0, 0, var(--dark-blue), var(--blend)),
+      rgba(0, 0, var(--dark-blue), 0) var(--percent)),
+        linear-gradient(#000, #000);
   animation-delay: -39s;
   transition: background 2s linear;
 }
