@@ -1,6 +1,6 @@
 ---
 title: "A long journey: Announcing Relm4 v0.5!"
-date: 2023-02-06
+date: 2023-02-17
 # weight: 1
 tags: ["relm4"]
 author: "Aaron Erhardt"
@@ -150,8 +150,9 @@ gtk::Button {
 
 ## Tooling additions
 
-Recently, we published [Relm4 snippets](https://open-vsx.org/extension/Relm4/relm4-snippets) as an IDE extension that provides helpful snippets for implementing Relm4's traits.
-This should help you saving some time for while implementing common traits so you can fully focus on coding.
+Recently, we published [Relm4 snippets](https://github.com/Relm4/vscode-relm4-snippets) as an IDE extension that provides helpful snippets for implementing Relm4's traits.
+This should help you saving some time while implementing common traits so you can fully focus on coding.
+The extension is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets) and [OpenVSIX](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets).
 
 ![Relm4 snippets](./snippets.gif)
 
