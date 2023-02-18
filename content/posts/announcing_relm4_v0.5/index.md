@@ -24,7 +24,7 @@ editPost:
 After more than one year of development, Relm4 0.5 has finally made it across the finish line with plenty of new features and improvements!
 Without a doubt, version 0.5 is by far our largest release so far making Relm4 even easier, more stable and productive than before.
 
-We can't fit all the improvements into this post so we'll only have a look at the most important new features added since the [first beta release](http://localhost:1313/blog/posts/announcing_relm4_v0.5_beta).
+We can't fit all the improvements into this post so we'll only have a look at the most important new features added since the [first beta release](https://relm4.org/blog/posts/announcing_relm4_v0.5_beta).
 Check out the [full changelog](https://github.com/Relm4/Relm4/blob/main/CHANGES.md) for more information.
 
 > ## About Relm4
