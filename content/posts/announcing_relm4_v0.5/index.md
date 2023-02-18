@@ -152,7 +152,7 @@ gtk::Button {
 
 Recently, we published [Relm4 snippets](https://github.com/Relm4/vscode-relm4-snippets) as an IDE extension that provides helpful snippets for implementing Relm4's traits.
 This should help you saving some time while implementing common traits so you can fully focus on coding.
-The extension is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets) and [OpenVSIX](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets).
+The extension is available on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Relm4.relm4-snippets) and [OpenVSIX](https://open-vsx.org/extension/Relm4/relm4-snippets).
 
 ![Relm4 snippets](./snippets.gif)
 
