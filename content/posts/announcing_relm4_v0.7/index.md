@@ -110,7 +110,7 @@ By always using owned root widgets, it now takes even fewer steps to refactor be
 
 ## Where to get started
 
-+ ⬆️ **[Migration guide](https://relm4.org/book/stable/0_6_to_0_7.html)**
++ ⬆️ **[Migration guide](https://relm4.org/book/stable/migrations/0_6_to_0_7.html)**
 + 🏠 **[Website](https://relm4.org)**
 + ⭐ **[Repository](https://github.com/Relm4/Relm4)**
 + 📖 **[Book](https://relm4.org/book/stable)**
